@@ -9,6 +9,8 @@
     { "src": "/index1/(.*)", "dest": "/index1/$1" },
     { "src": "/style/(.*)", "dest": "/style/$1" },
     { "src": "/images/(.*)", "dest": "/images/$1" },
-    { "src": "/", "dest": "/index1/index.html" }
+    { "src": "/", "dest": "/index1/index.html" },
+    { "src": "/TTS.html", "dest": "/index1/TTS.html" },
+    { "src": "/STT.html", "dest": "/index1/STT.html" }
   ]
 }
