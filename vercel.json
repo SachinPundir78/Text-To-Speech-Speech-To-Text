@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     { "src": "index1/*.html", "use": "@vercel/static" },
     { "src": "style/*.css", "use": "@vercel/static" },
@@ -7,6 +8,7 @@
   "routes": [
     { "src": "/index1/(.*)", "dest": "/index1/$1" },
     { "src": "/style/(.*)", "dest": "/style/$1" },
-    { "src": "/images/(.*)", "dest": "/images/$1" }
+    { "src": "/images/(.*)", "dest": "/images/$1" },
+    { "src": "/", "dest": "/index1/index.html" }
   ]
 }
