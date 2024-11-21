@@ -1,0 +1,64 @@
+body {
+  background: url(../images/gx.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  height: 70vh;
+  width: 50vw;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(250, 4, 250, 0.502);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgb(255, 4, 251);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  padding: 20px;
+  border-radius: 5px;
+  height: 60%;
+  width: 70%;
+  color: rgb(255, 255, 255);
+}
+button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #ff00dd;
+}
+#result {
+  font-size: 30px;
+}
+.log {
+  display: flex;
+  height: 40px;
+}
+img {
+  height: 45px;
+  width: 90px;
+  border-radius: 5px;
+}
+#sound {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .main {
+    width: 90vw;
+  }
+}

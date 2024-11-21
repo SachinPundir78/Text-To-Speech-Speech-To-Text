@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text</title>
+    <link rel="stylesheet" type="text/css" href="../style/STT.css" />
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <h2>SPEECH TO TEXT</h2>
+            <p>Click on the "Start" button and allow microphone access.</p>
+            <div class="log">
+                <button id="startBtn">Start</button>
+                <span id="sound" style="display:none;"><img src="../images/sound-log.gif" alt="Listening..." /></span>
+            </div>
+            <h3>Result:</h3>
+            <p id="result">Your speech will appear here...</p>
+        </div>
+        <a href="index.html"><button class="back-btn">Back To Menu</button></a>
+    </div>
+    
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        const result = document.getElementById('result');
+        const soundIndicator = document.getElementById('sound');
+
+        function startSpeechToText() {
+            if (!('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+                alert("Your browser does not support Speech Recognition.");
+                return;
+            }
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            soundIndicator.style.display = "block";
+            result.textContent = "Listening...";
+
+            recognition.start();
+
+            recognition.addEventListener('result', (e) => {
+                result.textContent = e.results[0][0].transcript;
+                soundIndicator.style.display = "none";
+            });
+
+            recognition.addEventListener('error', (e) => {
+                console.error("Speech recognition error:", e.error);
+                result.textContent = `Error: ${e.error}`;
+                soundIndicator.style.display = "none";
+            });
+
+            recognition.addEventListener('end', () => {
+                soundIndicator.style.display = "none";
+                console.log('Recognition stopped');
+            });
+        }
+
+        startBtn.addEventListener('click', () => {
+            startSpeechToText();
+        });
+        recognition.addEventListener('error', (e) => {
+            console.error("Speech recognition error:", e.error);
+            result.textContent = `Error: ${e.error}`;
+            soundIndicator.style.display = "none";
+        });
+        
+    </script>
+</body>
+</html>

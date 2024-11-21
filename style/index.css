@@ -1,0 +1,113 @@
+body{
+    background: url(../images/gx.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.menu{
+    height: 70vh;
+    width: 50vw;
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(250, 4, 250, 0.502);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgb(255, 4, 251);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.choose{
+        font-family: 'Cinzel', serif;
+        font-size : 70px;
+}
+.op{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+    width: 80%;
+}
+.tts{
+    height: 160px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    justify-content: space-around;
+    flex-direction: column;
+   
+}
+span{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+img{
+    width: 150px;
+    height: 150px;
+    transition: all 0.3s ease;
+    filter: grayscale(50%);
+    border-radius: 5%;
+}
+img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 30px rgb(36, 33, 33);
+    transition: all 0.3s ease;
+    filter: grayscale(0%);
+}
+h2{
+    margin-left: 20px;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+span{
+    font-size: x-large;
+    font-weight: bolder;
+}
+@media screen and (max-width: 860px) {
+    .menu{
+        width: 90vw;
+        height: 80vh;
+    }
+}
+@media screen and (max-width: 500px) {
+    .menu{
+        width: 90vw;
+        height: 110vh;
+    }
+    .op{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+    width: 80%;
+    }
+    body{
+        background-size:200vh;
+    }
+    h1{
+        font-size: 40px;
+        margin-top: 30px;
+    }
+    span{
+        font-size: medium;
+        margin-bottom: 30px;
+    }
+}
